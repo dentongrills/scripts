@@ -1,6 +1,6 @@
 function cast(Caster, Target)
   SetSpellTriggerCount(3, 1)
-  AddProc(Caster, 1, 100)
+  AddProc(Target, 1, 100)
 end
 
 function proc(Caster, Target, ProcType, MinDmg, MaxDmg)
@@ -10,7 +10,7 @@ function proc(Caster, Target, ProcType, MinDmg, MaxDmg)
 	CastSpell(Target, 54423060, 1, spell_caster)
     RemoveTriggerFromSpell()
 	
-    ProcDamage(spell_caster, Target, "Repenting Strike", 7, MinDmg, MaxDmg)
+    ProcDamage(Target, Caster, "Repenting Strike", 7, MinDmg, MaxDmg)
   end
 end
 
